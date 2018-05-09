@@ -4,5 +4,11 @@
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "proxies": [{
+    "path": "/apiDraft5",
+    "proxyUrl": "https://api.draft5.gg"
+
+  }]
+
 }
