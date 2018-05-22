@@ -1,3 +1,126 @@
 page-info {
-
+  .box-title {
+    background: #5f6061;
+    font-weight: bold;
+    color: #f0f0f0;
+    font-size: 1.5em;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+  .card-resultado-topo {
+    position: relative;
+    font-size: 2em;
+    width: 100%;
+    font-weight: bold;
+    color: #f0f0f0;
+    background-size: cover !important;
+    background-position: center !important;
+    height: 250px;
+    padding-top: 55px;
+    .cardTime {
+      position: relative;
+      width: calc(50% - 25px);
+      float: left;
+      padding: 10px;
+      height: 100%;
+      .logoTime {
+        height: 80px;
+        object-fit: contain;
+        width: 100%;
+      }
+      .time {
+        font-size: 0.5em;
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+      }
+      .scoreA {
+        position: absolute;
+        top: 35px;
+        right: 10px;
+        font-size: 1.5em;
+      }
+      .scoreB {
+        position: absolute;
+        top: 35px;
+        left: 10px;
+        font-size: 1.5em;
+      }
+    }
+    .versus {
+      height: 40px;
+      width: 40px;
+      float: left;
+      margin-top: 40px;
+    }
+    .data-partida {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      left: 0px;
+      text-align: center;
+      font-size: 0.5em;
+    }
+    .melhor-de {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      left: 0px;
+      text-align: center;
+      font-size: 0.5em;
+    }
+  }
+  .box-campeonato {
+    position: relative;
+    width: 100%;
+    background: #999a9a;
+    .campeonato {
+      padding: 25px 0px;
+      text-align: center;
+      width: 100%;
+      position: relative;
+      display: inline-block;
+      color: #f0f0f0;
+    }
+  }
+  .box-mapas {
+    background: #999a9a;
+    .capa-mapa {
+      height: 50px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      text-shadow: 0px 1px 0px #000;
+      background-size: cover;
+      line-height: 50px;
+    }
+    .card-resultado-mapa {
+      padding: 25px 0px;
+      text-align: center;
+      width: 100%;
+      position: relative;
+      display: inline-block;
+      color: #f0f0f0;
+    }
+  }
+  .box-confronto-entre-equipes {
+    background: #999a9a;
+    .card-result-hth {
+      text-align: center;
+      width: 40%;
+      position: relative;
+      color: #f0f0f0;
+      bottom: 15px;
+      display: inline-block;
+    }
+    .logoTime {
+      height: 40px;
+      width: 29%;
+      margin-top: 10px;
+      object-fit: contain;
+    }
+  }
 }

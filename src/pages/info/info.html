@@ -7,12 +7,64 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>info</ion-title>
+    <ion-title>Detalhe da Partida</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <div class="card-resultado-topo" [ngStyle]="{ 'background': 'linear-gradient(to right, rgba(48, 53, 62, 0.7), rgba(48, 53, 62, 0.7)),url(' + jogo?.urlFundoCampeonato + ')'}">
+    <div class="cardTime">
+      <img class="logoTime" alt='{{jogo?.teamA}}' src='{{jogo?.logos?.teamA}}' title='{{jogo?.teamA}}'>
+      <span class="time">{{jogo?.teamA}}</span>
+      <span class="scoreA">{{jogo?.series?.scoreA}}</span>
+    </div>
+    <img class="versus" alt='Versus' src='assets/imgs/vsw.png' title='Versus'>
+    <div class="cardTime">
+      <span class="scoreB">{{jogo?.series?.scoreB}}</span>
+      <img class="logoTime" alt='{{jogo?.teamB}}' src='{{jogo?.logos?.teamB}}' title='{{jogo?.teamB}}'>
+      <span class="time">{{jogo?.teamB}}</span>
+    </div>
+    <span class="data-partida">{{jogo?.dataJogo.toLocaleDateString()}} - {{jogo?.horaJogo}}</span>
+    <span class="melhor-de">Melhor de {{jogo?.scores?.length}}</span>
+
+
+    <!-- <div class="box-infos">
+      <span class="campeonato"> {{jogo?.tournament?.tournamentName}}</span>
+    </div> -->
+
+  </div>
+  <div class="box-campeonato">
+    <div class="box-title">Campeonato</div>
+    <a href="{{jogo?.coverage?.url}}" target="_blank">
+      <span class="campeonato">{{jogo?.tournament?.tournamentName}}</span>
+    </a>
+  </div>
+
+
+  <div class="box-mapas">
+    <div class="box-title">{{jogo?.scores?.length === 1 ? 'Mapa' : 'Mapas' }}</div>
+    <div *ngFor="let mapa of jogo?.scores">
+      <div class="capa-mapa" [ngStyle]="{'background': 'url(assets/imgs/'+ mapa?.map +'.png) 50% 50%'}">
+        <span class="nome-map">{{mapa?.map}}</span>
+      </div>
+      <div class="card-resultado-mapa">
+        {{mapa.scoreA}} : {{mapa.scoreB}}
+      </div>
+    </div>
+  </div>
+  <div class="box-confronto-entre-equipes">
+    <div class="box-title">Confronto direto</div>
+    <img class="logoTime" alt='{{jogo?.teamA}}' src='{{jogo?.logos?.teamA}}' title='{{jogo?.teamA}}'>
+<span class="card-result-hth">{{hthScoreTimeA !== undefined ? hthScoreTimeA + ' : ' : 'Sem historico de confronto'}} {{hthScoreTimeB !== undefined ? hthScoreTimeB : ''}} </span>
+
+    <img class="logoTime" alt='{{jogo?.teamB}}' src='{{jogo?.logos?.teamB}}' title='{{jogo?.teamB}}'>
+
+
+
+
+  </div>
 
 </ion-content>

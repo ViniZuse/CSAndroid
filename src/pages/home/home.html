@@ -1,11 +1,59 @@
-<ion-content class="card-background-page">
-  <div class="teste" *ngFor="let jogo of jogos">
-    <ion-card>
-      <div class="card-title">
+<ion-header>
 
-        {{jogo.teamA}} x {{jogo.teamB}}
+  <ion-navbar>
+    <ion-title>Jogos de CS</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="card-background-page">
+
+  <div *ngFor="let jogo of jogos">
+
+    <ion-card (tap)="tapEvent(jogo.matchId)">
+
+      <div class="card-horario">
+        <span class="data">{{jogo?.dataJogo?.getDate()}}</span>
+        <span class="barra"></span>
+        <span class="data">{{jogo?.dataJogo?.getMonth() + 1}}</span>
+        <span class="horaJogo">{{jogo?.horaJogo}}</span>
+      </div>
+
+      <div class="card-campeonato">
+        {{jogo.tournament}}
+      </div>
+
+      <div class="melho-de">
+        Melhor de {{jogo.scores.length}}
+      </div>
+
+      <div class="card-title">
+        <div class="cardTime">
+          <img class="logoTime" alt='{{jogo.teamA}}' src='{{jogo.logos.teamA}}' title='{{jogo.teamA}}'>
+          <span class="time">{{jogo.teamA}}</span>
+        </div>
+        <img class="versus" alt='Versus' src='assets/imgs/vs.jpg' title='Versus'>
+        <div class="cardTime">
+          <img class="logoTime" alt='{{jogo.teamB}}' src='{{jogo.logos.teamB}}' title='{{jogo.teamB}}'>
+          <span class="time">{{jogo.teamB}}</span>
+        </div>
+
 
       </div>
+
+
+
+
+
+      <div *ngIf="jogo.isOver === 1" class="partida-finalizada">
+        Finalizada
+      </div>
+
+      <div *ngIf="jogo.live === 1" class="partida-ao-vivo">
+        <span class='ao_vivo'> </span>
+        <span class='status_partida'> Ao Vivo </span>
+      </div>
+
     </ion-card>
   </div>
 </ion-content>
